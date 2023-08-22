@@ -7,9 +7,32 @@
     
 */
 
-const env = "DEV"; // Toggle between these possible values "DEV" | "STAGE" | "PROD"
+const envArray = ['DEV', 'STAGE', 'PROD'];  
+const env = envArray[Math.floor(Math.random() * envArray.length)];  
+  
+console.log(env);  
+
 let databaseCredential = "devuser:password";
 
-// Task: Add code here
+switch(env) {
+  case "DEV":
+      databaseCredential = "devuser:password";
+    break;
+    // code block
+    break;
+  case "STAGE":
+      databaseCredential = "stageuser:password";
+    // code block
+    break;
+case "STAGE":
+      databaseCredential = "produser:password";
+    // code block
+    break;
+default:
+    databaseCredential = "devuser:password";
+    // code block
+}
 
 console.log(`Database credential for environment ${env} is ${databaseCredential}`);
+
+
